@@ -1,3 +1,12 @@
+<h3>Odczt z bazyt</h3>
+
+<ul>
+  <li *ngFor="let item of allVisitorsDataArray">
+    {{ item.visitorName }} | {{ item.visitorFamilyName }} | {{ item.visitorDate}} | {{ item.visitorHours}} | {{ item.visitorInstitution}} | {{ item.visitorComment}} | {{ item.visitorCreationDate}} | {{ item._id}}
+  </li>
+</ul>
+
+
 <h3>Dodaj dane do bazy</h3>
 
 <form [formGroup]="visitorDataForm" (ngSubmit)="addVisitDetails()">
@@ -14,3 +23,5 @@
 
   <button type="submit" [disabled]="visitorDataForm.invalid">Dodaj dane do bazy danych</button>
 </form>
+
+

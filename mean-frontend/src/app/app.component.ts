@@ -9,6 +9,7 @@ import { VisitorDataService } from './services/visitor-data.service';
 })
 export class AppComponent {
 
+  allVisitorsDataArray:any = [];
   visitorDataForm:FormGroup;
 
   constructor(
@@ -23,6 +24,10 @@ export class AppComponent {
         visitorInstitution: [''],
         visitorComment: [''],
       })
+  }
+
+  ngOnInit(){
+    this.getAllVisitorsData();
   }
 
   addVisitDetails(){
@@ -42,6 +47,12 @@ export class AppComponent {
       alert("dane zostały dodane do bazy");
     }, err => {
       console.log("Wystąpił błąd",err);
+    })
+  }
+
+  getAllVisitorsData(){
+    this.visitorDataService.getAllVisitorsData().subscribe( (data:any) =>{
+      this.allVisitorsDataArray = data;
     })
   }
 }

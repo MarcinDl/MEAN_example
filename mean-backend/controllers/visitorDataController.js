@@ -14,8 +14,16 @@ module.exports.createVisitorData = async (req,res) => {
     }
 }
 
-module.exports.getAllVisitorsData = async () => {
+module.exports.getAllVisitorsData = async (req,res) => {
+    try {
+        let allVisitorsData = await VisitorData.find();
+        console.log(allVisitorsData);
+        res.json(allVisitorsData)
 
+    } catch (err){
+        console.log(err);
+        res.status(500).send("Wystąpił błąd",err);
+    }
 }
 
 module.exports.getSingleVisitorData = async () => {

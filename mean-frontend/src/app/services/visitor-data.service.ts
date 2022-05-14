@@ -17,4 +17,8 @@ export class VisitorDataService {
     return this.http.post(this.url, visitData)
   }
 
+  getAllVisitorsData():Observable<any> {
+    return this.http.get(this.url)
+  }
+
 }
