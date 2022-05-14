@@ -28,7 +28,6 @@ const VisitorDataSchema = mongoose.Schema({
     visitorComment: {
         type: String
     }
-
 });
 
 module.exports = mongoose.model("Products",VisitorDataSchema)
