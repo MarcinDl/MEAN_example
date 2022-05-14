@@ -5,7 +5,7 @@ module.exports.createVisitorData = async (req,res) => {
         let visitorData
         visitorData = new VisitorData(req.body);
         await visitorData.save()
-        console.log(visitorData);
+        // console.log(visitorData);
         res.send(visitorData);
     }
     catch(err){
@@ -17,9 +17,8 @@ module.exports.createVisitorData = async (req,res) => {
 module.exports.getAllVisitorsData = async (req,res) => {
     try {
         let allVisitorsData = await VisitorData.find();
-        console.log(allVisitorsData);
-        res.json(allVisitorsData)
-
+        // console.log(allVisitorsData);
+        res.json(allVisitorsData);
     } catch (err){
         console.log(err);
         res.status(500).send("Wystąpił błąd",err);
@@ -28,6 +27,15 @@ module.exports.getAllVisitorsData = async (req,res) => {
 
 module.exports.getSingleVisitorData = async () => {
 
+}
+
+module.exports.filterByDate = async (req,res) => {
+    try {
+        let visitorData = await VisitorData.find({visitorDate: req.params.jakasData})
+        res.json(visitorData)
+    } catch (err) {
+        console.log("błąd",err)
+    }
 }
 
 module.exports.editSingleVisitorData = async () => {

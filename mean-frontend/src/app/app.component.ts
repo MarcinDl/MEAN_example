@@ -45,6 +45,7 @@ export class AppComponent {
     this.visitorDataService.createVisit(dataForm).subscribe((data:any) => {
       console.log(data);
       alert("dane zostały dodane do bazy");
+      this.getAllVisitorsData();
     }, err => {
       console.log("Wystąpił błąd",err);
     })
