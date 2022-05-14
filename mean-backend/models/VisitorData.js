@@ -22,8 +22,7 @@ const VisitorDataSchema = new mongoose.Schema({
         default: new Date()
     },
     visitorInstitution: {
-        type: String,
-        required:true
+        type: String
     },
     visitorComment: {
         type: String
