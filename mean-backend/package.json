@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/MarcinDl/MEAN_example/issues"
   },
-  "homepage": "https://github.com/MarcinDl/MEAN_example#readme"
+  "homepage": "https://github.com/MarcinDl/MEAN_example#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.18.1",
+    "mongoose": "^5.11.13"
+  }
 }
