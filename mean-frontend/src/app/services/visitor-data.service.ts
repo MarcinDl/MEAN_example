@@ -25,4 +25,8 @@ export class VisitorDataService {
     return this.http.put(this.url+"/"+visitDataEdit._id,visitDataEdit);
   }
 
+  removeVisitorData(idToRemove:any){
+    return this.http.delete(this.url+"/"+idToRemove);
+  }
+
 }

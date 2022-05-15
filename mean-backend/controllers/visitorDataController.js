@@ -62,6 +62,14 @@ module.exports.editSingleVisitorData = async (req,res) => {
     } catch(err){console.log(err)}
 }
 
-module.exports.removeSingleVisitorData = async () => {
-
+module.exports.removeSingleVisitorData = async (req,res) => {
+    try {
+        let visitorData = await VisitorData.findById(req.params._id);
+        if (!visitorData){
+            res.status(404).send("brak podanego id");
+        }
+        await VisitorData.findByIdAndRemove({_id: req.params._id})
+        res.json({msg: "Usunięto dane"})
+    }
+    catch(err){console.log(err);}
 }

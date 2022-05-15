@@ -101,5 +101,10 @@ export class AppComponent {
     });
   }
 
+  deleteVisitorData(id:any){
+      this.visitorDataService.removeVisitorData(id).subscribe( () => {
+        this.getAllVisitorsData();
+      });
+  }
 
 }

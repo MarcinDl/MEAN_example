@@ -4,6 +4,7 @@
   <li *ngFor="let item of allVisitorsDataArray">
     <input type="radio" name="aaa" (click)="editVisitorData(item)">
     {{ item.visitorName }} | {{ item.visitorFamilyName }} | {{ item.visitorDate}} | {{ item.visitorHours}} | {{ item.visitorInstitution}} | {{ item.visitorComment}} | {{ item.visitorCreationDate}} | {{ item._id}}
+    <button (click)="deleteVisitorData(item._id)">usun</button>
   </li>
 </ul>
 
