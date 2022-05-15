@@ -2,6 +2,7 @@
 
 <ul>
   <li *ngFor="let item of allVisitorsDataArray">
+    <input type="radio" name="aaa" (click)="editVisitorData(item)">
     {{ item.visitorName }} | {{ item.visitorFamilyName }} | {{ item.visitorDate}} | {{ item.visitorHours}} | {{ item.visitorInstitution}} | {{ item.visitorComment}} | {{ item.visitorCreationDate}} | {{ item._id}}
   </li>
 </ul>
@@ -25,3 +26,20 @@
 </form>
 
 
+<h3>Edytuj dane w bazie</h3>
+
+
+<form [formGroup]="visitorDataFormEdit" (ngSubmit)="addVisitDetailsEdit()">
+  <input type="text" formControlName="visitorNameEdit" placeholder="Podaj imię">
+  <input type="text" formControlName="visitorFamilyNameEdit" placeholder="Podaj nazwisko">
+  <input type="date" formControlName="visitorDateEdit">
+  <select name="" id="" formControlName="visitorHoursEdit">
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+  </select>
+  <input type="text" formControlName="visitorInstitutionEdit" placeholder="Podaj nazwę instytucji">
+  <input type="text" formControlName="visitorCommentEdit" placeholder="Podaj komentarz">
+
+  <button type="submit" [disabled]="visitorDataFormEdit.invalid">Edytuj dane</button>
+</form>

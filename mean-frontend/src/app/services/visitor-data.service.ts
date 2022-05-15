@@ -21,4 +21,8 @@ export class VisitorDataService {
     return this.http.get(this.url)
   }
 
+  editVisitorData(visitDataEdit:any):Observable<any> {
+    return this.http.put(this.url+"/"+visitDataEdit._id,visitDataEdit);
+  }
+
 }
